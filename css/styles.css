@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+#fullwidth{
+    width: 100%;
+    background: #0E51A7;
+    height: 7000px;
+}
+
+#container {
+    width: 1024px;
+    margin: 0 auto;
+    border: 1px solid #EEE;
+    background: #CCC;
+    height: 650px;
+    position: fixed;
+    top: 100px;
+    overflow: hidden;
+    
+}
+
+#kitchen {
+    margin-left: -200px;
+    margin-top: -340px;
+}
+
+@-webkit-keyframes sway{
+	0% {
+            -webkit-transform:rotate(15deg);
+        }
+        
+	50% {
+	    -webkit-transform:rotate(-15deg);	
+	}
+	
+        100%{
+            -webkit-transform:rotate(15deg);
+        }
+}
+
+
+#kitchen{
+    -webkit-animation-name: sway;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in;
+}
+
+
+
+
+#scrollimg{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
+@-webkit-keyframes scrollpop{
+	0% {
+            display: none;
+        }
+        1%{
+            position: fixed;
+            bottom: 0;
+	}
+	50% {
+	    position: fixed;
+            bottom: 100px;		
+	}
+	99% {
+            position: fixed;
+            bottom: -600px;
+	}
+        100%{
+            display: none;
+        }
+}
+
+#scrollimg.remove{
+    -webkit-animation-name: scrollpop;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in;
+}
+
+@keyframes resize {
+	0% {
+		padding: 0;
+	}
+	50% {
+		padding: 0 20px;
+		background-color:red;		
+	}
+	100% {
+		padding: 0 100px;
+		background-color:blue;
+	}
+}
+	
+	
+
+
+#kitchen.white-transition{   
+    -webkit-transition:background-color 0.5s linear;
+    transition:background-color 0.5s linear;  
+    background:#FFF; 
+}
+#container.grey-transition{   
+    -webkit-transition:background-color 0.5s linear;
+    transition:background-color 0.5s linear;  
+    background:#CCC; 
+}
+
+#title {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding:10px;
+    background: #FFC973;
+    font-size: 40px;
+    color: #FFF;
+}
