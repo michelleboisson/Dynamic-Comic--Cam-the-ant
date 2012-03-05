@@ -1,6 +1,16 @@
 //Global Variables
-var scene1 = 548;
+var scene1 = 548; //parachute landing 
+var scene2 = 750; //conversation close ups
 var hereY; //tracks where we are in the scroll
+
+//images
+var dadcloseup_img = 'images/panel1.png';
+var camcloseup_img = 'images/panel2.png';
+
+
+//dialogue
+var dad1_speak = "Quit causing a scene";
+var cam1_speak = "I keep telling you i'm not scene, I'm emo ok!";
 
 
 //returns the scroll location
@@ -54,12 +64,21 @@ $(window).scroll(function () {
 
   hereY = getScrollXY();
   console.log(hereY);
-		
+
+  //and stop swaying the animation
+  if(hereY > 10){
+    $('#kitchen').css('-webkit-animation-name', 'none');
+  }else{
+    $('#kitchen').css('-webkit-animation-name', 'sway');
+  }
+  
   if (hereY < scene1){
+      //reset incase user scrolls up
       $('#kitchen').fadeIn();
-      $('#container').removeClass('blue-transition');
-      $('#container').addClass('grey-transition');
+      $('#antlegs').fadeIn();
+      $('#parachute').fadeOut();
       $('#title').text("Scene 1");
+      
 			
       //change zoom amount
       $('#kitchen').css('zoom', hereY/650 + 0.27076923076923076);
@@ -68,12 +87,32 @@ $(window).scroll(function () {
       $('#kitchen').css('margin-top', -hereY*3-340);
   }
 
-  if (hereY > scene1){
+  if (hereY > scene1 ){
       $('#kitchen').fadeOut();
       $('#kitchen').addClass('white-transition');
       $('#title').text("Scene 2");
-      $("#antlegs").remove();
-      
+      $("#antlegs").fadeOut();
   }
+  
+  if (hereY > scene1+10 && hereY < scene2){
+    $('#mainimg').attr('src', 'images/parachute.png').fadeIn();
+    $('#dialogue').fadeOut();
+//    $('#kitchen').remove();
 		
+  }
+  
+  if (hereY > scene2 && hereY < scene2 +100){
+    $('#mainimg').attr('src',dadcloseup_img);
+    $('#mainimg').fadeIn();
+    $('#dialogue').fadeIn();
+    $('#dialogue').addClass('dadBubbeleScene2');
+    $('#dialogue p').text(dad1_speak);
+  }
+  
+  if (hereY > scene2+100){
+    $('#mainimg').attr('src',camcloseup_img);
+    $('#dialogue').removeClass('dadBubbeleScene2').addClass('camBubbeleScene2');
+    $('#dialogue p').text(cam1_speak);
+  }
+  
 });//end on window scroll
