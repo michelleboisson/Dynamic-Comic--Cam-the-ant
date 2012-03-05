@@ -11,7 +11,7 @@
     height: 7000px;
 }
 
-#container {
+#panel {
     width: 1024px;
     margin: 0 auto;
     border: 1px solid #EEE;
@@ -26,6 +26,10 @@
 #kitchen {
     margin-left: -200px;
     margin-top: -340px;
+    -webkit-animation-name: sway;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in;
 }
 
 @-webkit-keyframes sway{
@@ -41,17 +45,12 @@
             -webkit-transform:rotate(15deg);
         }
 }
-
-
-#kitchen{
-    -webkit-animation-name: sway;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in;
+#antlegs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 300;
 }
-
-
-
 
 #scrollimg{
     position: fixed;
@@ -110,7 +109,7 @@
     transition:background-color 0.5s linear;  
     background:#FFF; 
 }
-#container.grey-transition{   
+#panel.grey-transition{   
     -webkit-transition:background-color 0.5s linear;
     transition:background-color 0.5s linear;  
     background:#CCC; 
