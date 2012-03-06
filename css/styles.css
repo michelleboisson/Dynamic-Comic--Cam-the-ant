@@ -20,7 +20,12 @@
     position: fixed;
     top: 100px;
     overflow: hidden;
-    
+}
+
+.imgpanels {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #kitchen {

@@ -3,6 +3,13 @@ var scene1 = 548; //parachute landing
 var scene2 = 750; //conversation close ups
 var hereY; //tracks where we are in the scroll
 
+//audio
+var a = new Audio();
+var windy_sound = 'sounds/ParachutingWind.mp3';
+var thump_sound = 'sounds/thump.mp3';
+
+var soundPlayed = false;
+
 //images
 var dadcloseup_img = 'images/panel1.png';
 var camcloseup_img = 'images/panel2.png';
@@ -42,11 +49,20 @@ function setContainer (){
   $('#panel').css('left', setLeftContainer);
 }
 
+function playSoundClip(){
+  a.setAttribute('src', windy_sound);
+  a.setAttribute('loop', 'loop');
+  a.load();
+  a.play();
+}
 
 $(document).ready(function() {
   console.log("ready!");
+  playSoundClip();
   setContainer();
   $('#kitchen').css('zoom', '0.27076923076923076');
+  $('#parachute').hide();
+  $('#dialogue').hide();
 });
 
 $(window).resize(function() {
@@ -76,10 +92,10 @@ $(window).scroll(function () {
       //reset incase user scrolls up
       $('#kitchen').fadeIn();
       $('#antlegs').fadeIn();
-      $('#parachute').fadeOut();
+      $('#parachute').hide();
+      $('#dialogue').hide();
       $('#title').text("Scene 1");
-      
-			
+      			
       //change zoom amount
       $('#kitchen').css('zoom', hereY/650 + 0.27076923076923076);
       //change zoom location
@@ -95,13 +111,27 @@ $(window).scroll(function () {
   }
   
   if (hereY > scene1+10 && hereY < scene2){
+    console.log("--------------SCENE 2-----------------------");
     $('#mainimg').attr('src', 'images/parachute.png').fadeIn();
     $('#dialogue').fadeOut();
+    
+    
 //    $('#kitchen').remove();
 		
   }
   
+  
+  if ((hereY > scene1) && !soundPlayed){
+    a.pause();
+    a.load(thump_sound);
+    a.setAttribute('src', thump_sound);
+    a.setAttribute('loop', 'none');  
+    a.play();
+    soundPlayed = true;
+  }
+  
   if (hereY > scene2 && hereY < scene2 +100){
+    a.pause();
     $('#mainimg').attr('src',dadcloseup_img);
     $('#mainimg').fadeIn();
     $('#dialogue').fadeIn();
