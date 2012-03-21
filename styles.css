@@ -1,0 +1,229 @@
+* { margin: 0; padding: 0; }
+
+body{
+}
+
+#menu{
+text-align: center;
+padding-top: 200px;
+}
+
+#menu h1,h2,h3{font-family: 'UnmaskedBB';}
+#menu h1{font-size:60px;padding-bottom: 20px;}
+#menu h3{font-size: 30px;padding-top:60px;}
+#menu a{text-decoration: none;color:black;}
+
+
+.player{
+position:fixed;
+top:50px;
+left:50px;
+margin-top:-50px;
+margin-left:-50px;
+}
+
+
+.panel{
+width:100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+height:7000px;
+position:absolute;
+top:0;
+}
+.startpanel{
+width:100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+height:7000px;
+position:absolute;
+top:0;
+}
+
+#panel0{
+background: url(images/kitchen.png) no-repeat 35% 65% fixed;
+}
+
+#panel1{
+background: url(images/parachute.png) no-repeat bottom center fixed; }
+#panel2{
+background: url(images/dadcloseup.png) no-repeat bottom center fixed;
+}
+
+#panel3{
+background: url(images/emocloseup.png) no-repeat bottom center fixed; 
+}
+#panel4{
+background: url(images/dadcallsout.png) no-repeat bottom center fixed;
+}
+
+#panel5{
+background: url(images/emoresponds.png) no-repeat bottom center fixed;
+}
+
+#panel6{
+background: url(images/shhh.png) no-repeat bottom center fixed;}
+
+#panel7{
+background: url(images/raiding.png) no-repeat bottom center fixed;}
+
+#panel8{
+background: url(images/spray.png) no-repeat bottom center fixed;}
+
+#panel9{
+background: url(images/look.png) no-repeat bottom center fixed;}
+
+#panel10{
+background: url(images/tone.png) no-repeat bottom center fixed;}
+
+#panel11{
+background: url(images/queen.png) no-repeat bottom center fixed;}
+
+#panel12{
+background: black;}
+
+#end{visibility: hidden;}
+
+.panel h1{color:#666;position: fixed; top:50%; left: 50%;font-family: 'UnmaskedBB';}
+
+@font-face {
+    font-family: 'UnmaskedBB';
+    src: url('fonts/unmaskedbb.eot');
+    src: url('fonts/unmaskedbb.eot?#iefix') format('embedded-opentype'),
+         url('fonts/unmaskedbb.woff') format('woff'),
+         url('fonts/unmaskedbb.ttf') format('truetype'),
+         url('fonts/unmaskedbb.svg#unmaskedbb') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.dialogue {
+padding: 15px 30px;
+margin: 0;
+color: black;
+background: rgba(255,255,255,0.8);
+border-radius: 25px / 50px;
+-moz-border-radius: 25px / 50px;
+border-radius: 25px / 50px;
+font-size: 34px;
+font-family: 'UnmaskedBB';
+}
+
+#line1{
+
+position: fixed;
+top:200px;
+right:100px;
+}
+
+#line2{
+
+position: fixed;
+top:100px;
+left:30%;
+width:400px;
+}
+
+#line3{
+
+position: fixed;
+top:200px;
+left:150px;
+width:500px;
+}
+
+#line4{
+
+position: fixed;
+top:160px;
+right:60px;
+width:400px;
+}
+#line5{
+
+position: fixed;
+top:100px;
+left:5%;
+width:300px;
+}
+#line6{
+position: fixed;
+top:10px;
+right:2%;
+width:300px;
+}
+#line7{
+position: fixed;
+top:250px;
+left:25%;
+width:400px;
+}
+#line8{
+position: fixed;
+top:250px;
+left:25%;
+width:400px;
+}#line9{
+position: fixed;
+top:250px;
+right:2%;
+width:200px;
+}
+
+
+.ant{
+background: url(images/antworker.png) no-repeat;
+position:fixed;
+top:20px;
+width:100px;
+height:100px;
+}
+@-webkit-keyframes working1{
+0%{left:100%;}
+100%{left:15%;}		   	
+		   	}
+		   	
+@-webkit-keyframes working2{
+0%{left:115%;}
+20%{right:0px;}
+100%{left:15%;}		   	
+		   	}
+@-webkit-keyframes working3{
+0%{left:130%;}
+30%{right:0px;}
+100%{left:15%;}		   	
+		   	}
+@-webkit-keyframes working4{
+0%{left:135%;}
+40%{right:0px;}
+100%{left:15%;}		   	
+		   	}
+@-webkit-keyframes working5{
+0%{left:150%;}
+50%{right:0px;}
+100%{left:15%;}		   	
+		   	}
+.first{
+animation: working1 12s linear 2s infinite normal;
+-moz-animation: working1 12s linear 2s infinite normal; /* Firefox */
+-webkit-animation: working1 12s linear 2s infinite normal; /* Safari and Chrome */}
+.second{
+animation: working2 14s linear 1s infinite normal;
+-moz-animation: working2 14s linear 1s infinite normal; /* Firefox */
+-webkit-animation: working2 14s linear 1s infinite normal; /* Safari and Chrome */}
+.third{
+animation: working3 16s linear 1s infinite normal;
+-moz-animation: working3 16s linear 1s infinite normal; /* Firefox */
+-webkit-animation: working3 16s linear 1s infinite normal; /* Safari and Chrome */}
+.fourth{
+animation: working4 18s linear 1s infinite normal;
+-moz-animation: working4 18s linear 1s infinite normal; /* Firefox */
+-webkit-animation: working4 18s linear 1s infinite normal; /* Safari and Chrome */}
+.fifth{
+animation: working5 20s linear 1s infinite normal;
+-moz-animation: working5 20s linear 1s infinite normal; /* Firefox */
+-webkit-animation: working5 20s linear 1s infinite normal; /* Safari and Chrome */}

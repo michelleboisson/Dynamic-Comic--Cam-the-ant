@@ -14,9 +14,6 @@ var panel11=6000;
 var panel12=6500;
 var hereY; //tracks where we are in the scroll
 
-var scrolling = false;
-
-
 //images
 var parachute = 'images/parachute.png';
 var dadcloseup_img = 'images/panel1.png';
@@ -49,16 +46,6 @@ function getScrollXY() {
   return scrOfY;
 }
 
-function autoPageScroll() {
-  console.log('autoscroll');
-    	window.scrollBy(0,10); // horizontal and vertical scroll increments
-    	scrolldelay = setTimeout('autoPageScroll()',20); // scrolls every 100 milliseconds
-	scrolling = true;
-}
-function stopScroll() {
-    	clearTimeout(scrolldelay);
-	scrolling = false;
-}
 
 //set the container to be centered since it's position is fixed
 function setContainer (){
@@ -72,45 +59,11 @@ $(document).ready(function() {
   console.log("ready!");
   setContainer();
   $('#kitchen').css('zoom', '0.27076923076923076');
-  //autoPageScroll();
-
 });
 
-
-$(document).keypress(function(e){
-  if ((e.which && e.which == 32) || (e.keyCode && e.keyCode == 32)) {
-    if (scrolling){
-    console.log("space pressed!");
-    stopScroll();
-    }
-    togglePlay();
-    return false;
-  } else {
-    autoPageScroll();
-  return true;
-  }
+$(window).resize(function() {
+  setContainer();
 });
-
-
-$('#playbutton').click(function(){
-  togglePlay();
-  return false;
-});
- 
-function togglePlay(){
-  var $elem = $('#player').children(':first');
-  $elem.stop()
-  .show()
-  .animate({'marginTop':'-175px','marginLeft':'-175px','width':'350px','height':'350px','opacity':'0'},function(){
-  $(this).css({'width':'100px','height':'100px','margin-left':'-50px','margin-top':'-50px','opacity':'1','display':'none'});
-  });
-  $elem.parent().append($elem);
-}
-
-
-
-
-
 	
 
 
@@ -125,17 +78,13 @@ $(window).scroll(function () {
   console.log(hereY);
 
   //and stop swaying the animation
-  if(hereY > 10){
-    $('#kitchen').css('-webkit-animation-name', 'none');
+  
+  if(hereY>=200){
+  $('#panel0').css("-webkit-animation-name", "none");
   }else{
-    $('#kitchen').css('-webkit-animation-name', 'sway');
+  $('#panel0').css("-webkit-animation-name", "sway");
   }
   
-  if (hereY <= panel0+10){
-    	
-    
-  
-  }
 
   if (hereY >= panel0 && hereY < panel1){
   $('#panel0').css("visibility", "visible"); 
